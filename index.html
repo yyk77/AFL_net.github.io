@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<body>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+
+	<title>UT-CMVMR</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #777;
+        text-align: center;
+        padding: 8px;
+        border-left:0px;
+        border-right:0px;
+    }
+
+    .video-container {
+      height: 100px; /* 设置视频容器的固定高度 */
+      padding-bottom: 56.25%;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .video-container .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: #fff;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+  </style>
+
+    <script>
+ const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const parentContainer = document.querySelector('.parent-container');
+
+let currentIndex = 0;
+
+leftArrow.addEventListener('click', scrollLeft);
+rightArrow.addEventListener('click', scrollRight);
+
+function scrollLeft() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    scrollToCurrentIndex();
+  }
+}
+
+function scrollRight() {
+  if (currentIndex < parentContainer.childElementCount - 1) {
+    currentIndex++;
+    scrollToCurrentIndex();
+  }
+}
+
+function scrollToCurrentIndex() {
+  const offset = currentIndex * parentContainer.offsetWidth;
+  parentContainer.scrollTo({
+    left: offset,
+    behavior: 'smooth'
+  });
+}
+        function playVideo(video) {
+          video.play();
+        }
+
+        function pauseVideo(video) {
+          video.pause();
+        }
+  </script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+
+
+<div class="container" >
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="column has-text-centered">
+    <h1 class="title is-1 publication-title"> <b>UT-CMVMR:</b>  </h1>
+    <h3 class="title is-3 publication-title"> UNIFIED PRETRAINING TARGET BASED VIDEO-MUSIC RETRIEVAL </h3>
+    <h2 class="title is-3 publication-title"> WITH MUSIC RHYTHM AND VIDEO OPTICAL FLOW INFORMATION  </h2>
+    </div>
+    <br>
+    <div class="is-size-5">
+        <span class="author-block">
+          <h4 style="text-align: center;"><b>Authors: </b>Tianjun Mao<sup>1</sup>, Shansong Liu<sup>2</sup>, Yunxuan Zhang<sup>3</sup>, Dian Li<sup>3</sup>, Ying Shan<sup>2</sup></h4>
+    </div>
+
+    <div class="is-size-5 publication-authors">
+        <span class="author-block"><h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>Fudan University</h4><h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>ARC Lab, Tencent PCG</h4><h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>Fundamental Technology Center, Tencent PCG</h4></span>
+    </div>
+
+    <br><br>
+
+
+    <div class="column has-text-centered">
+        <span class="link-block">
+            <a href="https://github.com/TencentARC-QQ/UT-CMVMR" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="fab fa-github"></i>
+            </span>
+            <span>Github</span>
+            </a>
+        </span>
+
+        <span class="link-block">
+            <a href="http://arxiv.org/abs/2309.09421" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+                <i class="ai ai-arxiv"></i>
+            </span>
+            <span>Paper</span>
+            </a>
+        </span>
+
+
+    </div>
+</div>
+
+    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Abstraction</h2>
+        </div>
+      </div>
+
+    <p>Background music (BGM) can enhance the video’s emotion. However, selecting an appropriate BGM often requires domain knowledge. This has led to the development of video-music retrieval techniques. Most existing approaches utilize pretrained video/music feature extractors trained with different target sets to obtain average
+video/music-level embeddings. The drawbacks are two-fold. One is that different target sets for video/music pretraining may cause
+the generated embeddings difficult to match. The second is that the underlying temporal correlation between video and music is ignored. In this paper, our proposed approach leverages a unified target
+set to perform video/music pretraining and produces clip-level embeddings to preserve temporal information. The downstream cross-modal matching is based on the clip-level features with embedded
+music rhythm and optical flow information. Experiments demonstrate that our proposed method can achieve superior performance
+over the state-of-the-art methods by a significant margin.</p>
+</div>
+
+
+	
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Method</h2>
+        </div>
+      </div>
+
+    <div class="text-center">
+        <img id="teaser" width="90%" src="media/framework.png">
+    </div>
+</div>
+
+	
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Demo</h2>
+        </div>
+      </div>
+    <table>
+    <tr>
+      <th scope="col" style="width: 20%">Original Videos</th>
+      <th scope="col" style="width: 20%">CMVMR(ours)</th>
+      <th scope="col" style="width: 20%">CBVMR</th>
+      <th scope="col" style="width: 20%">CMVAE</th>
+      <th scope="col" style="width: 20%">Descriptions</th>
+    </tr>
+    <tr>
+
+      <td>
+      <video-container>
+        <video src="demo/0ghQpuyFfD8.mp4" controls></video>
+      </video-container>
+      </td>
+
+      <td>
+      <video-container>
+        <video src="demo/0ghQpuyFfD8___top1.mp4" controls></video>
+      </video-container>
+      </td>
+
+      <td>
+          <video-container>
+        <video src="demo/0ghQpuyFfD8___top1_cbvmr.mp4" controls></video>
+      </video-container>
+      </td>
+      <td>
+           <video-container>
+        <video src="demo/0ghQpuyFfD8___top1_cmvae.mp4" controls></video>
+      </video-container>
+      </td>
+      <td>Recommended music from CMVMR is more in line with the style and rhythm of the video</td>
+    </tr>
+    <tr>
+      <td>
+      <video-container>
+        <video src="demo/0D5eZnaDtAI.mp4" controls></video>
+      </video-container>
+      </td>
+
+      <td>
+      <video-container>
+        <video src="demo/0D5eZnaDtAItop1__top1_cmvmr.mp4" controls></video>
+      </video-container>
+      </td>
+
+      <td>
+          <video-container>
+              <video src="demo/0D5eZnaDtAItop___top1_cbvmr.mp4" controls></video>
+          </video-container>
+      </td>
+      <td>
+          <video-container>
+              <video src="demo/0D5eZnaDtAItop1___top1_cmvae.mp4" controls></video>
+          </video-container>
+      </td>
+      <td>CMVMR recommends background music for the video that fit the theme of the video, while the other two models recommend softer music</td>
+    </tr>
+    <tr>
+      <td>
+          <video-container>
+              <video src="demo/U3Z_e2PL324.mp4" controls></video>
+          </video-container>
+
+      </td>
+      <td>
+          <video-container>
+          <video src="demo/U3Z_e2PL324___top1.mp4" controls></video>
+          </video-container>
+      </td>
+
+      <td>
+          <video-container>
+          <video src="demo/U3Z_e2PL324top1_cbvmr.mp4" controls></video>
+          </video-container>
+      </td>
+      <td>
+          <video-container>
+          <video src="demo/U3Z_e2PL324top1_cmvae.mp4" controls></video>
+          </video-container>
+      </td>
+      <td>CMVMR recommends the original background music for the video, which matches the joyful atmosphere of the original video</td>
+    </tr>
+  </table>
+
+
+</div>
+
+
