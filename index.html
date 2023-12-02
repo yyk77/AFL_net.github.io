@@ -156,12 +156,12 @@ function scrollToCurrentIndex() {
         </div>
       </div>
 
-    <p>Background music (BGM) can enhance the video’s emotion. However, selecting an appropriate BGM often requires domain knowledge. This has led to the development of video-music retrieval techniques. Most existing approaches utilize pretrained video/music feature extractors trained with different target sets to obtain average
-video/music-level embeddings. The drawbacks are two-fold. One is that different target sets for video/music pretraining may cause
-the generated embeddings difficult to match. The second is that the underlying temporal correlation between video and music is ignored. In this paper, our proposed approach leverages a unified target
-set to perform video/music pretraining and produces clip-level embeddings to preserve temporal information. The downstream cross-modal matching is based on the clip-level features with embedded
-music rhythm and optical flow information. Experiments demonstrate that our proposed method can achieve superior performance
-over the state-of-the-art methods by a significant margin.</p>
+    <p>Speaker diarization is a cutting-edge technology that primarily focuses on determining 'who spoke when' in a given audio or video recording. This task involves segmenting the input into homogeneous regions according to the speaker identity, thereby attributing each segment to a specific speaker. It plays a pivotal role in a wide array of applications, such as transcription services, meeting analysis, broadcast news indexing, etc.
+	    Speaker diarization in real-world videos presents significant challenges due to varying acoustic conditions, diverse scenes, and the presence of off-screen speakers, among other factors.
+	    This paper builds upon a previous study (AVR-Net) and introduces a novel multi-modal speaker diarization system, AFL-Net. Unlike AVR-Net, which independently extracts high-level representations from each modality, AFL-Net employs a multi-modal cross-attention mechanism. 
+	    This approach generates high-level representations from each modality while conditioning on each other, ensuring a more comprehensive information fusion across modalities to enhance identity discrimination.
+	Furthermore, the proposed AFL-Net incorporates dynamic lip movement as an additional modality to aid in distinguishing each segment's identity. We also introduce a masking strategy during training that randomly obscures the face and lip movement modalities, which increases the influence of the audio modality on system outputs.    
+    </p>
 </div>
 
 
@@ -175,7 +175,7 @@ over the state-of-the-art methods by a significant margin.</p>
       </div>
 
     <div class="text-center">
-        <img id="teaser" width="90%" src="media/framework.png">
+        <img id="teaser" width="90%" src="demo/framework.png">
     </div>
 </div>
 
