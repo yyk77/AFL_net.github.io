@@ -114,7 +114,7 @@ function scrollToCurrentIndex() {
     <br>
     <div class="is-size-5">
         <span class="author-block">
-          <h4 style="text-align: center;"><b>Authors: </b>Yongkang Yin<sup>1</sup><sup>2</sup>, Xu Li<sup>2</sup>, Ying Shan<sup>2</sup>, Yuexian Zou<sup>1</sup></h4>
+          <h4 style="text-align: center;"><b>Authors: </b>Yongkang Yin<sup>1</sup><sup>,</sup><sup>2</sup>, Xu Li<sup>2</sup>, Ying Shan<sup>2</sup>, Yuexian Zou<sup>1</sup></h4>
     </div>
 
     <div class="is-size-5 publication-authors">
@@ -189,9 +189,9 @@ function scrollToCurrentIndex() {
       </div>
     <table>
     <tr>
-      <th scope="col" style="width: 33.33%">AFL-Net(ours)</th>
-      <th scope="col" style="width: 33.33%">AVR-Net(baseline)</th>
-      <th scope="col" style="width: 33.33%">Descriptions</th>
+      <th scope="col" style="width: 33.33%">AFL-Net&nbsp;(ours)</th>
+      <th scope="col" style="width: 33.33%">AVR-Net&nbsp;(baseline)</th>
+      <th scope="col" style="width: 33.33%">Some&nbsp;analysis</th>
     </tr>
 	    
     <tr>
@@ -207,7 +207,9 @@ function scrollToCurrentIndex() {
       </video-container>
       </td>
 
-      <td>AFL-Net model correctly distinguishes speakers under visual and audio blur conditions.</td>
+      <td>This video demonstrates a conversation between two people. While both models accurately interpret the first two sentences, 
+	 the baseline model makes an error in the third sentence due to blurred visual and auditory information when the camera zooms out.
+      AFL-Net, however, correctly judges the sentence by enhancing the fusion of multimodal information.</td>
     </tr>
 	    
     <tr>
@@ -223,7 +225,8 @@ function scrollToCurrentIndex() {
       </video-container>
       </td>
 
-      <td>Baseline model gets confused when distinguishing speakers under very good conditions.</td>
+      <td>The audio and video conditions for this dialogue are optimal. However, due to the speakers' highly similar visual and pronunciation features, 
+	 the baseline model makes an error in distinguishing them, whereas AFL-Net accurately judges by employing advanced feature representation.</td>
     </tr>
 	    
     <tr>
@@ -239,7 +242,8 @@ function scrollToCurrentIndex() {
           </video-container>
       </td>
 
-      <td>The baseline model makes errors in distinguishing speakers under visual loss conditions.</td>
+      <td>In this video, there is an occurrence of the speaker being off-screen. In our training process, 
+      we emphasize the importance of audio features, enabling accurate judgments in many similar situations.</td>
     </tr>
   </table>
 
