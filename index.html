@@ -114,7 +114,7 @@ function scrollToCurrentIndex() {
     <br>
     <div class="is-size-5">
         <span class="author-block">
-          <h4 style="text-align: center;"><b>Authors: </b>Yongkang Yin<sup>1</sup><sup>,</sup><sup>2</sup>, Xu Li<sup>2</sup>, Ying Shan<sup>2</sup>, Yuexian Zou<sup>1</sup></h4>
+          <h4 style="text-align: center;"><b>Authors: </b>Yongkang Yin<sup>1</sup><sup>,</sup><sup>2</sup>, Xu Li<sup>2</sup><sup>,</sup><sup>*</sup>, Ying Shan<sup>2</sup>, Yuexian Zou<sup>1</sup><sup>,</sup><sup>*</sup></h4>
     </div>
 
     <div class="is-size-5 publication-authors">
@@ -157,11 +157,10 @@ function scrollToCurrentIndex() {
         </div>
       </div>
 
-    <p>Speaker diarization is a cutting-edge technology that primarily focuses on determining 'who spoke when' in a given audio or video recording. This task involves segmenting the input into homogeneous regions according to the speaker identity, thereby attributing each segment to a specific speaker. It plays a pivotal role in a wide array of applications, such as transcription services, meeting analysis, broadcast news indexing, etc.
-	    Speaker diarization in real-world videos presents significant challenges due to varying acoustic conditions, diverse scenes, and the presence of off-screen speakers, among other factors.
-	    This paper builds upon a previous study (AVR-Net) and introduces a novel multi-modal speaker diarization system, AFL-Net. Unlike AVR-Net, which independently extracts high-level representations from each modality, AFL-Net employs a multi-modal cross-attention mechanism. 
-	    This approach generates high-level representations from each modality while conditioning on each other, ensuring a more comprehensive information fusion across modalities to enhance identity discrimination.
-	Furthermore, the proposed AFL-Net incorporates dynamic lip movement as an additional modality to aid in distinguishing each segment's identity. We also introduce a masking strategy during training that randomly obscures the face and lip movement modalities, which increases the influence of the audio modality on system outputs.    
+    <p> Speaker diarization in real-world videos presents significant challenges due to varying acoustic conditions, diverse scenes, and the presence of off-screen speakers, among other factors. This paper builds upon a previous study (AVR-Net) and introduces a novel multi-modal speaker diarization system, AFL-Net. Unlike AVR-Net, which independently extracts high-level representations from each modality, AFL-Net employs a multi-modal cross-attention mechanism. This approach generates high-level representations from each modality while conditioning on each other, ensuring a more comprehensive information fusion across modalities to enhance identity discrimination.
+Furthermore, the proposed AFL-Net incorporates dynamic lip movement as an additional modality to aid in distinguishing each segment's identity. We also introduce a masking strategy during training that randomly obscures the face and lip movement modalities, which increases the influence of the audio modality on system outputs.
+Experimental results demonstrate that our proposed model achieves state-of-the-art diarization error rates (DERs) of 23.65\% and 19.76\% on the AVA-AVD dataset when trained on the AVA-AVD dataset and a combined dataset of VoxCeleb1, VoxCeleb2, and AVA-AVD, respectively. 
+These performance results represent a relative DER decrease of 13.8\% and 7.0\% compared to AVR-Net, respectively. Moreover, our experiments confirm the effectiveness of the proposed system, even under varying missing rates of visual features.  
     </p>
 </div>
 
@@ -174,7 +173,7 @@ function scrollToCurrentIndex() {
           <h2 class="title is-3">Method</h2>
         </div>
       </div>
-
+ <p>  Codes will be available upon acceptance </p>
     <div class="text-center">
         <img id="afl" width="90%" src="demo/framework.PNG">
     </div>
