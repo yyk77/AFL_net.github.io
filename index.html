@@ -120,7 +120,11 @@ function scrollToCurrentIndex() {
     <div class="is-size-5 publication-authors">
 <!--         <span class="author-block"><h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6</b>Peking University</h4><h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>ARC Lab, Tencent PCG</h4></span> -->
 	<span class="author-block"><h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>1. Peking University</h4>
-	<h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>2. ARC Lab, Tencent PCG</h4></span>
+	<h4 style="text-align: center;"><b style="color:#d76100; font-weight:normal">&#x25B6 </b>2. ARC Lab, Tencent PCG</h4>
+	<br>
+	<h5 style="text-align: center;">*. Corresponding authors</h4>
+	<h5 style="text-align: center;">&dagger;. This work was done when Yongkang Yin was an intern at ARC Lab, Tencent PCG.</h4>
+	</span>
     </div>
 
     <br><br>
@@ -196,19 +200,19 @@ These performance results represent a relative DER decrease of 13.8% and 7.0% co
     <tr>
       <td>
       <video-container>
-        <video src="demo/1-2.mp4" controls></video>
+        <video src="demo/1-1.mp4" controls></video>
       </video-container>
       </td>
 
       <td>
       <video-container>
-        <video src="demo/1-1.mp4" controls></video>
+        <video src="demo/1-2.mp4" controls></video>
       </video-container>
       </td>
 
-      <td>In this video, there's a conversation between two people. 
-	While both models correctly understand the first two sentences, the baseline model encounters a challenge in the third sentence, possibly due to the visual and auditory information 
-	becoming unclear when the camera zooms out. AFL-Net, on the other hand, analyzes the sentence correctly, which may attribute to the multimodal information.</td>
+      <td>In this video, a conversation unfolds between two individuals. Both models accurately identify the first two sentences. 
+	However, the baseline model stumbles upon the third sentence, potentially due to the confusion arising from the simultaneous appearance of both individuals' facial information on the screen. 
+	Conversely, AFL-Net correctly recognizes the sentence, a success that could be attributed to the incorporation of an additional lip movement modality.</td>
     </tr>
 	    
     <tr>
@@ -224,8 +228,8 @@ These performance results represent a relative DER decrease of 13.8% and 7.0% co
       </video-container>
       </td>
 
-      <td>The audio and video conditions for this dialogue are considered optimal. However, owing to the speakers' closely resembling visual and pronunciation features, 
-	      the baseline model might encounter challenges in distinguishing them, while AFL-Net potentially achieves accurate judgments, which may attribute to the advanced feature representation.</td>
+      <td>In this video segment, the AVR-Net mistakenly identifies the second individual as the first throughout the entire segment, potentially due to their similar visual appearances. 
+	However, the proposed AFL-Net accurately recognizes the second individual, thereby validating the effectiveness of fusion strategy among different modalities.</td>
     </tr>
 	    
     <tr>
@@ -241,8 +245,9 @@ These performance results represent a relative DER decrease of 13.8% and 7.0% co
           </video-container>
       </td>
 
-      <td>In this video, there is an occurrence of the speaker being off-screen. In our training process, 
-      we emphasize the importance of audio features, probably enabling accurate judgments in many similar situations.</td>
+      <td>In this video, there's an instance where the second speaker is off-screen. 
+	The AVR-Net incorrectly identifies this speaker as the first one, whereas the proposed AFL-Net accurately recognizes the speaker. 
+	This could be because the proposed model is trained to rely more heavily on the audio modality, which is directly linked to the speaker's identity.</td>
     </tr>
   </table>
 
